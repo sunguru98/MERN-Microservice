@@ -1,0 +1,30 @@
+{
+  "name": "todo-microservice",
+  "version": "1.0.0",
+  "description": "A small todo app with microservice model",
+  "main": "server.js",
+  "nodemonConfig": {
+    "ignore": [
+      "public/data/*.json",
+      "public/javascripts/*.js"
+    ]
+  },
+  "scripts": {
+    "test": "npm test",
+    "dev": "nodemon server.js -e js",
+    "start": "node server.js"
+  },
+  "author": "Sundeep Charan Ramkumar",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs-extra": "^8.1.0",
+    "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "morgan": "^1.10.0"
+  }
+}
