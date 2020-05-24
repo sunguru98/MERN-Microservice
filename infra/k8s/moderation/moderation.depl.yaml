@@ -15,10 +15,6 @@ spec:
       containers:
         - name: moderation
           image: sundeepcharan/moderation
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
 ---
 # The Cluster IP since being one-one for every deployment, is going to be written on the same deployment file.
 apiVersion: v1
