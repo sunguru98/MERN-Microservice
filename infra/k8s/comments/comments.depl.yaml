@@ -30,7 +30,7 @@ spec:
   selector:
     app: comments
   ports:
-    - port: 9998
-      targetPort: 9998
+    - port: 9999
+      targetPort: 9999
       protocol: TCP
       name: comments-port-clusterip

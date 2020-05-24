@@ -26,11 +26,14 @@ app.post("/events", async (req, res) => {
       },
     };
     setTimeout(async () => {
-      await axios.post("http://localhost:9996/events", commentModeratedEvent);
+      await axios.post(
+        "http://event-bus-srv:9996/events",
+        commentModeratedEvent
+      );
       return res
         .status(203)
         .send({ statusCode: 203, message: `Event of type ${type} received` });
-    }, 5000);
+    }, 2000);
     return;
   }
   return res

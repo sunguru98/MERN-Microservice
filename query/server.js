@@ -60,7 +60,7 @@ app.get("/posts", (_, res) => res.json({ posts: queries }));
 app.post("/events", async (req, res) => {
   const resultantEvent = await processEvent(req.body);
   resultantEvent.type !== "EmptyQueryCreated" &&
-    (await axios.post("http://localhost:9996/events", resultantEvent));
+    (await axios.post("http://event-bus-srv:9996/events", resultantEvent));
   return res.sendStatus(202);
 });
 
@@ -68,6 +68,6 @@ app.listen(PORT, async () => {
   console.log(`Query Service connected on PORT: ${PORT}`);
   const {
     data: { events },
-  } = await axios.get("http://localhost:9996/events");
+  } = await axios.get("http://event-bus-srv:9996/events");
   events.length && events.forEach(e => processEvent(e));
 });

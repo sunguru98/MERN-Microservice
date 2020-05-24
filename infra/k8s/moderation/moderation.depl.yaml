@@ -30,7 +30,7 @@ spec:
   selector:
     app: moderation
   ports:
-    - port: 9998
-      targetPort: 9998
+    - port: 9995
+      targetPort: 9995
       protocol: TCP
       name: moderation-port-clusterip
