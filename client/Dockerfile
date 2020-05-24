@@ -4,10 +4,10 @@ FROM node:latest
 WORKDIR /usr/app
 # Copying the package.json file alone to pre install all packages
 COPY package.json ./
-# Script to install all packages
-RUN npm install
 # Utilising inline editing via VIM and NANO
 RUN apt-get update && apt-get install -y vim nano
+# Script to install all packages
+RUN npm install
 # Recopying all the files (including package.json)
 COPY ./ ./
 # Default startup command.

@@ -35,4 +35,6 @@ app.post("/events", (req, res) => {
   res.status(202).send(`Event of type ${event.type} received`);
 });
 
-app.listen(PORT, () => console.log(`Post Service connected on PORT: ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Version 2: Post Service connected on PORT: ${PORT}`)
+);
