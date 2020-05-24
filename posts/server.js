@@ -25,7 +25,7 @@ app
       encoding: "utf-8",
     });
     const postCreatedEvent = { type: "PostCreated", payload: post };
-    await axios.post("http://localhost:9996/events", postCreatedEvent);
+    await axios.post("http://event-bus-srv:9996/events", postCreatedEvent);
     res.status(201).json({ statusCode: 201, post });
   });
 
