@@ -28,7 +28,7 @@ app
       encoding: "utf-8",
     });
     const commentCreatedEvent = { type: "CommentCreated", payload: comment };
-    await axios.post("http://localhost:9996/events", commentCreatedEvent);
+    await axios.post("http://event-bus-srv:9996/events", commentCreatedEvent);
     res.status(201).json({ statusCode: 201, comment });
   });
 
@@ -43,7 +43,7 @@ app.post("/events", async (req, res) => {
       type: "CommentUpdated",
       payload: { content, _id, status, postId },
     };
-    await axios.post("http://localhost:9996/events", commentUpdatedEvent);
+    await axios.post("http://event-bus-srv:9996/events", commentUpdatedEvent);
   }
   res.status(202).send(`Event of type ${type} received`);
 });

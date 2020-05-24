@@ -18,9 +18,9 @@ app
     });
     console.log(`Event of type ${event.type} is received onto the event bus`);
     axios.post("http://posts-srv-clusterip:9998/events", event); // POSTS SERVICE
-    axios.post("http://localhost:9999/events", event); // COMMENTS SERVICE
-    axios.post("http://localhost:9995/events", event); // MODERATION SERVICE
-    axios.post("http://localhost:9997/events", event); // QUERY SERVICE
+    axios.post("http://comments-srv-clusterip:9999/events", event); // COMMENTS SERVICE
+    axios.post("http://moderation-srv-clusterip:9995/events", event); // MODERATION SERVICE
+    axios.post("http://query-srv-clusterip:9997/events", event); // QUERY SERVICE
     res
       .status(202)
       .send({ statusCode: 202, message: "Events fired successfully!" });
