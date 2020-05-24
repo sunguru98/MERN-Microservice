@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eventbus-depl
+  name: event-bus-depl
 spec:
   replicas: 1
   selector:

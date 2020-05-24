@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: query-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: query
+  template:
+    metadata:
+      labels:
+        app: query
+    spec:
+      containers:
+        - name: query
+          image: sundeepcharan/query
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+---
+# The Cluster IP since being one-one for every deployment, is going to be written on the same deployment file.
+apiVersion: v1
+kind: Service
+metadata:
+  name: query-srv-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    app: query
+  ports:
+    - port: 9998
+      targetPort: 9998
+      protocol: TCP
+      name: query-port-clusterip
