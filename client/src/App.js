@@ -10,7 +10,7 @@ const App = () => {
       try {
         const {
           data: { posts },
-        } = await axios.get("http://localhost:9997/posts");
+        } = await axios.get("http://posts.com/posts");
         setPosts(posts);
       } catch (err) {
         setPosts([]);
@@ -22,7 +22,7 @@ const App = () => {
   const submitPost = async title => {
     const {
       data: { post },
-    } = await axios.post("http://localhost:9998/posts", { title });
+    } = await axios.post("http://posts.com/posts/create", { title });
     console.log(post);
     setPosts([...posts, post]);
   };

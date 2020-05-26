@@ -13,7 +13,7 @@ app.use(express.json());
 const PORT = 9998;
 
 app
-  .route("/posts")
+  .route("/posts/create")
   .get((_, res) => {
     res.json({ statusCode: 200, posts });
   })

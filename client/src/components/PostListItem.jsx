@@ -11,7 +11,7 @@ export const PostListItem = ({
   const createComment = async content => {
     const {
       data: { comment },
-    } = await axios.post(`http://localhost:9999/comments/${_id}`, {
+    } = await axios.post(`http://posts.com/comments/${_id}`, {
       content,
     });
     setComments([...comments, comment]);
