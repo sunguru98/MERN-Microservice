@@ -36,5 +36,5 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(PORT, () =>
-  console.log(`Version 2: Post Service connected on PORT: ${PORT}`)
+  console.log(`Post Service connected on PORT: ${PORT}`)
 );
