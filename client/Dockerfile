@@ -1,5 +1,7 @@
 # Base Node image
 FROM node:latest
+# Writing this line to avoid the create-react-app bug 
+ENV CI=true
 # Changing the Docker's default starting directory to avoid any owerwriting issues
 WORKDIR /usr/app
 # Copying the package.json file alone to pre install all packages
